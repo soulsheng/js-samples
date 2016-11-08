@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Google Maps JavaScript API v3 Example: Localization Demo</title>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="http://maps.google.cn/maps/api/js"></script>
+    <script src="http://www.google.cn/jsapi"></script>
 
     <style type="text/css">
       html, body {
@@ -135,7 +136,8 @@
             document.getElementById('chosen_lang').innerHTML += currentLanguage;
             document.getElementById('start_div').className = 'hidden';
             document.getElementById('map_div').className = 'visible';
-            loadMap(langCode);
+            //loadMap(langCode);
+			mapsLoaded();
           }
         };
       }
