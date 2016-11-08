@@ -147,9 +147,7 @@
         refreshLink.addEventListener('click', function() {
           window.location.reload();
         });
-		alert('to new DirectionsService');
         directionsService = new google.maps.DirectionsService();
-		alert('to new Geocoder');
         geocoder = new google.maps.Geocoder();
         infowindow = new google.maps.InfoWindow();
         var torun = new google.maps.LatLng(53.01357, 18.597665);
@@ -158,7 +156,6 @@
             center: torun,
             zoom: 5
         });
-		alert('to new Map');
         google.maps.event.addListener(map, 'click', function(e) {
           geocoder.geocode(
               {'latLng': e.latLng},
@@ -185,7 +182,6 @@
               });
         });
         showDirections();
-		alert('end to mapsLoaded');
       }
 
       function showDirections() {
