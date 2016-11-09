@@ -3,7 +3,8 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>Google Maps JavaScript API v3 Example: Info Window Custom</title>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://maps.google.cn/maps/api/js"></script>
+<script src="http://www.google.cn/jsapi"></script>
 <script type="text/javascript">
 
 /* An InfoBox is like an info window, but it displays
@@ -83,7 +84,7 @@ InfoBox.prototype.createElement = function() {
     div = this.div_ = document.createElement("div");
     div.style.border = "0px none";
     div.style.position = "absolute";
-    div.style.background = "url('http://googlemaps.github.io/js-v2-samples/images/blueinfowindow.gif')";
+    div.style.background = "url('http://soulsheng.github.io/js-samples/images/blueinfowindow.gif')";
     div.style.width = this.width_ + "px";
     div.style.height = this.height_ + "px";
     var contentDiv = document.createElement("div");
@@ -96,7 +97,7 @@ InfoBox.prototype.createElement = function() {
     closeImg.style.width = "32px";
     closeImg.style.height = "32px";
     closeImg.style.cursor = "pointer";
-    closeImg.src = "http://googlemaps.github.io/js-v2-samples/images/closebigger.gif";
+    closeImg.src = "http://soulsheng.github.io/js-samples/images/closebigger.gif";
     topDiv.appendChild(closeImg);
 
     function removeInfoBox(ib) {
@@ -192,14 +193,14 @@ InfoBox.prototype.panMap = function() {
 function initialize() {
     var myOptions = {
       zoom: 8,
-      center: new google.maps.LatLng(-33.397, 150.644),
+      center: new google.maps.LatLng(36, 120),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       sensor: 'true'
     }
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(-34, 150),
+        position: new google.maps.LatLng(36, 120),
         map: map
     });
     google.maps.event.addListener(marker, "click", function(e) {
@@ -209,7 +210,7 @@ function initialize() {
   }
 </script>
 </head>
-<body style="margin:0px; padding:0px;" onload="initialize()">
+<body style="margin:0px; padding:0px;" onLoad="initialize()">
   <div id="map_canvas" style="width:100%; height:100%"></div>
 </body>
 </html>
