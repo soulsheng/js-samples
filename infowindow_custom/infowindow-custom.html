@@ -5,6 +5,7 @@
 <title>Google Maps JavaScript API v3 Example: Info Window Custom</title>
 <script src="http://maps.google.cn/maps/api/js"></script>
 <script src="http://www.google.cn/jsapi"></script>
+<script type="text/javascript" src="../common/mapLoad.js"></script>
 <script type="text/javascript">
 
 /* An InfoBox is like an info window, but it displays
@@ -191,16 +192,22 @@ InfoBox.prototype.panMap = function() {
 };
 
 function initialize() {
-    var myOptions = {
-      zoom: 8,
-      center: new google.maps.LatLng(36, 120),
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      sensor: 'true'
-    }
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
+	if (0)
+	{
+		// remote map
+		var myLatlng = new google.maps.LatLng(36, 120);	// official remote gps
+		var map = loadMapRemote( myLatlng, 3, "map_canvas" );	
+	}
+	else
+	{
+		// local map
+		var myLatlng = new google.maps.LatLng(60, -90);	// custom local gps	
+		var map = loadMapLocal( myLatlng, 3, "map_canvas" );
+	}
+	
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(36, 120),
+        position: myLatlng,
         map: map
     });
     google.maps.event.addListener(marker, "click", function(e) {

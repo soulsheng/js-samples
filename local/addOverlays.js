@@ -9,7 +9,7 @@ function addInfowindow(marker, infowindow)
 									);
 }
 
-function addOverlays() 
+function addOverlays( map, myLatlng ) 
 {
 	for (var i=0; i < 5; i++) {
 		var iLatlng = new google.maps.LatLng( myLatlng.lat(), myLatlng.lng() + 15*i );
