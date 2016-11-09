@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Google Maps JavaScript API v3 Example: Image MapTypes</title>
+<link href="mapfiles/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="mapapi.js"></script>
+<script type="text/javascript" src="mapLoad.js"></script>
+<script type="text/javascript" src="addOverlays.js"></script>
+
+<script>
+
+  var myLatlng = new google.maps.LatLng(60, -90);
+  var localMapType = new LocalMapType(); 
+  var map;
+  
+  function initialize() {
+
+    var myOptions = {
+      center: myLatlng,
+      zoom: 3,
+      streetViewControl: false,
+      mapTypeControlOptions: {
+            mapTypeIds: ["local", google.maps.MapTypeId.ROADMAP]
+        }
+    };
+ 
+    map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+    //map.setMapTypeId('satellite');
+    //map.MapTypes.insertAt(0, moonMapType);
+    map.mapTypes.set('local', localMapType);
+    map.setMapTypeId('local');
+    //map.overlayMapTypes.insertAt(0, new CoordMapType(new google.maps.Size(256, 256)));
+	
+	addOverlays();
+
+  }
+ 
+  </script>
+</head>
+<body onLoad="initialize()">
+  <div id="map_canvas" style="width: 1260px; height: 860px;"></div>
+</body>
+</html>
