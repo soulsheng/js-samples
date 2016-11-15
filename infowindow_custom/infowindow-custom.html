@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="content-type" content="text/html; charset=gbk"/>
 <title>Google Maps JavaScript API v3 Example: Info Window Custom</title>
 <script src="http://maps.google.cn/maps/api/js?region=cn&language=zh-CN&key=AIzaSyDpP5BFUmuq8Wn5V-1ixdm5iyuxoYWmzdw"></script>
 <script type="text/javascript" src="../common/mapLoad.js"></script>
@@ -212,7 +212,7 @@ function initialize() {
     google.maps.event.addListener(marker, "click", function(e) {
       var infoBox = new InfoBox({latlng: marker.getPosition(), map: map});
     });
-    google.maps.event.trigger(marker, "click");
+    //google.maps.event.trigger(marker, "click");
   }
 </script>
 </head>

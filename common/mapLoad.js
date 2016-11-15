@@ -60,7 +60,7 @@
 				
   function LocalMapType() {}
   LocalMapType.prototype.tileSize = new google.maps.Size(256, 256);
-  LocalMapType.prototype.maxZoom = 7;
+  LocalMapType.prototype.maxZoom = 9;
   LocalMapType.prototype.minZoom = 1;
   LocalMapType.prototype.name = "本地";
   LocalMapType.prototype.alt = "显示本地地图";
