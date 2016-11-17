@@ -26,7 +26,8 @@ function initialize() {
 	
     var marker = new google.maps.Marker({
         position: myLatlng,
-        map: map
+        map: map,
+		icon: 'mapfiles/logo-ioi-8.png'
     });
     google.maps.event.addListener(marker, "click", function(e) {
       var infoBox = new InfoBox({latlng: marker.getPosition(), map: map});
