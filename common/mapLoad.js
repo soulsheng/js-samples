@@ -20,7 +20,7 @@
 	var myOptions = {
       zoom: zoom,
       center: myLatlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.HYBRID
     }
     var map = new google.maps.Map(document.getElementById( divID ), myOptions);
 	return map;

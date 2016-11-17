@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=gbk"/>
+<title>Google Maps JavaScript API v3 Example: Info Window Custom</title>
+<script src="http://maps.google.cn/maps/api/js?region=cn&language=zh-CN&key=AIzaSyDpP5BFUmuq8Wn5V-1ixdm5iyuxoYWmzdw"></script>
+<script type="text/javascript" src="../common/mapLoad.js"></script>
+<script type="text/javascript" src="../common/infobox1.js"></script>
+<script type="text/javascript">
+
+
+function initialize() {
+
+	if (1)
+	{
+		// remote map
+		var myLatlng = new google.maps.LatLng(17, 113);	// official remote gps
+		var map = loadMapRemote( myLatlng, 2, "map_canvas" );	
+	}
+	else
+	{
+		// local map
+		var myLatlng = new google.maps.LatLng(60, -90);	// custom local gps	
+		var map = loadMapLocal( myLatlng, 3, "map_canvas" );
+	}
+	
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+    });
+    google.maps.event.addListener(marker, "click", function(e) {
+      var infoBox = new InfoBox({latlng: marker.getPosition(), map: map});
+    });
+    //google.maps.event.trigger(marker, "click");
+  }
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onLoad="initialize()">
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+</html>
